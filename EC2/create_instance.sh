@@ -29,6 +29,19 @@ aws ec2 describe-instances \
     --filters "Name=instance-type,Values=t2.micro" \
     --query "Reservations[].Instances[].InstanceId"
 
+# Start EC2 instance
+#   Instance ID : i-008be848755cb78bb
+
+aws ec2 start-instances \
+    --instance-ids i-008be848755cb78bb
+
+# Stop EC2 instance
+#   Ins0tance ID : i-008be848755cb78bb
+
+aws ec2 stop-instances \
+    --instance-ids i-008be848755cb78bb
+
+
 # Terminate EC2 instance
 #   Instance ID : i-008be848755cb78bb
 
