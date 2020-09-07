@@ -16,7 +16,21 @@ aws ec2 run-instances \
     --subnet-id subnet-2dcbc445
 
 # Adding Tag to the instance
+#   Resource ID : i-074d27ef5329a94cf
+#   Tags : (key-value) pair
 
 aws ec2 create-tags \
     --resources i-074d27ef5329a94cf \
     --tags Key=User,Value=Shreyas
+
+# List all the instances (Instance ID) with type "t2-micro"
+
+aws ec2 describe-instances \
+    --filters "Name=instance-type,Values=t2.micro" \
+    --query "Reservations[].Instances[].InstanceId"
+
+# Terminate EC2 instance
+#   Instance ID : i-008be848755cb78bb
+
+aws ec2 terminate-instances \
+    --instance-ids i-008be848755cb78bb
